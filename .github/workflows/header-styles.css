@@ -1,0 +1,45 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #1C1F23;
+    border-radius: 10px;
+    margin-bottom: 30px;
+}
+
+.header h1 {
+    margin: 0;
+    color: #FFFFFF;
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.left-section {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.home-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 16px;
+    background-color: #2C3038;
+    border: none;
+    border-radius: 20px;
+    color: #FFFFFF;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.home-btn:hover {
+    background-color: #3C4048;
+}
+
+.home-btn svg {
+    width: 20px;
+    height: 20px;
+}

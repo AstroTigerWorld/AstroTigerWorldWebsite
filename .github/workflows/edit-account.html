@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Account</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="button-styles.css">
+    <link rel="stylesheet" href="profile-picture-styles.css">
+    <style>
+        body {
+            background: linear-gradient(135deg, #161414 50%, #2a162b 100%);
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 40px auto;
+            background: rgba(24, 24, 24, 0.95);
+            border-radius: 15px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            position: relative;
+        }
+
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+            margin-bottom: 40px;
+            font-size: 2.5em;
+            font-weight: 600;
+        }
+
+        .form-container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .profile-section {
+            text-align: center;
+            margin: 20px 0 40px;
+            padding: 20px;
+            border-radius: 15px;
+            background: rgba(0, 0, 0, 0.5);
+        }
+
+        .profile-picture {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 20px;
+            border: 4px solid #4a90e2;
+            box-shadow: 0 4px 15px rgba(74, 144, 226, 0.3);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .profile-picture:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 20px rgba(74, 144, 226, 0.4);
+        }
+
+        .picture-upload {
+            margin: 20px 0;
+        }
+
+        .form-input {
+            width: 100%;
+            padding: 12px 15px;
+            margin: 8px 0 20px;
+            border: 2px solid #727272;
+            border-radius: 8px;
+            font-size: 16px;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+            background: rgb(109, 109, 109);
+        }
+
+        .form-input:focus {
+            border-color: #4a90e2;
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.2);
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            color: #2c3e50;
+            font-weight: 500;
+            font-size: 1.1em;
+        }
+
+        .back-btn {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            padding: 10px 20px;
+            background: linear-gradient(135deg, #4a90e2, #357abd);
+            color: rgb(0, 0, 0);
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            text-decoration: none;
+            font-weight: 500;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .back-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+        }
+
+        .back-btn:active {
+            transform: translateY(0);
+        }
+
+        #editAccountForm {
+            background: rgb(0, 0, 0, 0.2);
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        }
+
+        .btn {
+            margin-top: 20px;
+            width: 100%;
+            padding: 12px 24px;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                margin: 20px auto;
+                padding: 20px;
+            }
+
+            .profile-picture {
+                width: 150px;
+                height: 150px;
+            }
+
+            h1 {
+                font-size: 2em;
+                margin-top: 40px;
+            }
+
+            .back-btn {
+                top: 10px;
+                left: 10px;
+                padding: 8px 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="popup-overlay"></div>
+    <div class="profile-picture-popup">
+        <h3 class="popup-title">Choose Profile Picture</h3>
+        <div class="predefined-images">
+            <img src="images/avatars/avatar1.svg" class="predefined-image" data-id="1" alt="Profile 1">
+            <img src="images/avatars/avatar2.svg" class="predefined-image" data-id="2" alt="Profile 2">
+            <img src="images/avatars/avatar3.svg" class="predefined-image" data-id="3" alt="Profile 3">
+            <img src="images/avatars/avatar4.svg" class="predefined-image" data-id="4" alt="Profile 4">
+            <img src="images/avatars/avatar5.svg" class="predefined-image" data-id="5" alt="Profile 5">
+            <img src="images/avatars/avatar6.svg" class="predefined-image" data-id="6" alt="Profile 6">
+        </div>
+        <div class="or-divider">OR</div>
+        <div class="upload-section">
+            <input type="file" id="customPictureInput" accept="image/*">
+            <button class="upload-button" type="button">Upload Custom Picture</button>
+        </div>
+        <div class="popup-buttons">
+            <button class="popup-button close-popup">Cancel</button>
+            <button class="popup-button save-picture">Save</button>
+        </div>
+    </div>
+    <div class="container">
+        <a href="index.html" class="back-btn">Back</a>
+        <h1>Edit Profile</h1>
+        <div class="form-container">
+            <div class="profile-section">
+                <img id="profilePreview" src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHZpZXdCb3g9IjAgMCA0MCA0MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48Y2lyY2xlIGN4PSIyMCIgY3k9IjIwIiByPSIyMCIgZmlsbD0iIzY2N2VlYSIvPjxwYXRoIGQ9Ik0yMCAyMEMyMi43NjE0IDIwIDI1IDE3Ljc2MTQgMjUgMTVDMjUgMTIuMjM4NiAyMi43NjE0IDEwIDIwIDEwQzE3LjIzODYgMTAgMTUgMTIuMjM4NiAxNSAxNUMxNSAxNy43NjE0IDE3LjIzODYgMjAgMjAgMjBaIiBmaWxsPSJ3aGl0ZSIvPjxwYXRoIGQ9Ik0yOCAzMEMyOCAyNi42ODYzIDI0LjQxODMgMjQgMjAgMjRDMTUuNTgxNyAyNCAxMiAyNi42ODYzIDEyIDMwIiBzdHJva2U9IndoaXRlIiBzdHJva2Utd2lkdGg9IjIiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPjwvc3ZnPg==" alt="Profile Picture" class="profile-picture">
+                <div class="picture-upload">
+                    <button id="openProfilePicker" class="btn">Change Profile Picture</button>
+                </div>
+            </div>
+            <form id="editAccountForm">
+                <div>
+                    <label for="newUsername">Username</label>
+                    <input type="text" id="newUsername" class="form-input" placeholder="Enter your username">
+                </div>
+                <div>
+                    <label for="newPassword">New Password (optional)</label>
+                    <input type="password" id="newPassword" class="form-input" placeholder="Enter new password">
+                </div>
+                <button type="submit" class="btn">Save Changes</button>
+            </form>
+        </div>
+    </div>
+    <script src="edit-account-functionality.js"></script>
+</body>
+</html>

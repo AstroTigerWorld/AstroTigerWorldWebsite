@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="success-animation.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            font-family: Arial, sans-serif;
+            background-color: #1a1a1a;
+            color: #fff;
+        }
+
+        .form {
+            background-color: #2a2a2a;
+            padding: 2rem;
+            border-radius: 10px;
+            width: 100%;
+            max-width: 420px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+        }
+
+        #heading {
+            font-size: 28px;
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 30px;
+            color: #fff;
+        }
+
+        .field {
+            position: relative;
+            margin-bottom: 20px;
+        }
+
+        .input-icon {
+            position: absolute;
+            left: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #7c7c7c;
+        }
+
+        .input-field {
+            width: 100%;
+            padding: 12px 12px 12px 45px;
+            border: 1px solid #3f3f3f;
+            border-radius: 5px;
+            background-color: #1a1a1a;
+            color: #fff;
+            font-size: 16px;
+            box-sizing: border-box;
+        }
+
+        .input-field:focus {
+            outline: none;
+            border-color: #4c6fff;
+        }
+
+        .btn {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+
+        .button1, .button2, .button3 {
+            padding: 12px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s;
+            text-decoration: none;
+            text-align: center;
+        }
+
+        .button1 {
+            background-color: #4c6fff;
+            color: #fff;
+            flex: 2;
+        }
+
+        .button1:hover {
+            background-color: #3451db;
+        }
+
+        .button2 {
+            background-color: #2a2a2a;
+            color: #4c6fff;
+            border: 1px solid #4c6fff;
+            flex: 1;
+            display: block;
+        }
+
+        .button2:hover {
+            background-color: #1a1a1a;
+        }
+
+        .button3 {
+            width: 100%;
+            background-color: transparent;
+            color: #7c7c7c;
+            text-decoration: underline;
+        }
+
+        .button3:hover {
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <form class="form" id="loginForm">
+        <p id="heading">Login</p>
+        <div class="field">
+            <svg class="input-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                <path d="M13.106 7.222c0-2.967-2.249-5.032-5.482-5.032-3.35 0-5.646 2.318-5.646 5.702 0 3.493 2.235 5.708 5.762 5.708.862 0 1.689-.123 2.304-.335v-.862c-.43.199-1.354.328-2.29.328-2.926 0-4.813-1.88-4.813-4.798 0-2.844 1.921-4.881 4.594-4.881 2.735 0 4.608 1.688 4.608 4.156 0 1.682-.554 2.769-1.416 2.769-.492 0-.772-.28-.772-.76V5.206H8.923v.834h-.11c-.266-.595-.881-.964-1.6-.964-1.4 0-2.378 1.162-2.378 2.823 0 1.737.957 2.906 2.379 2.906.8 0 1.415-.39 1.709-1.087h.11c.081.67.703 1.148 1.503 1.148 1.572 0 2.57-1.415 2.57-3.643zm-7.177.704c0-1.197.54-1.907 1.456-1.907.93 0 1.524.738 1.524 1.907S8.308 9.84 7.371 9.84c-.895 0-1.442-.725-1.442-1.914z"></path>
+            </svg>
+            <input autocomplete="username" placeholder="Email or Username" class="input-field" type="text" id="email">
+        </div>
+        <div class="field">
+            <svg class="input-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                <path d="M8 1a2 2 0 0 1 2 2v4H6V3a2 2 0 0 1 2-2zm3 6V3a3 3 0 0 0-6 0v4a2 2 0 0 0-2 2v5a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2z"></path>
+            </svg>
+            <input autocomplete="current-password" placeholder="Password" class="input-field" type="password" id="password">
+        </div>
+        <div class="btn">
+            <button type="submit" class="button1">Login</button>
+            <a href="/signup.html" class="button2">Sign Up</a>
+        </div>
+        <a href="/forgot-password.html" class="button3">Forgot Password</a>
+    </form>
+    <div class="overlay" id="overlay"></div>
+    <div class="success-animation" id="successAnimation">
+        <svg class="checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52">
+            <circle class="checkmark__circle" cx="26" cy="26" r="25" fill="none"/>
+            <path class="checkmark__check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8"/>
+        </svg>
+        <div class="success-message">Successfully Logged In!</div>
+    </div>
+    <script src="login-functionality.js" type="text/javascript"></script>
+</body>
+</html>
