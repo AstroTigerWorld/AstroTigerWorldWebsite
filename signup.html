@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            font-family: Arial, sans-serif;
+            background-color: #1a1a1a;
+            color: #fff;
+        }
+
+        .form {
+            background-color: #2a2a2a;
+            padding: 2rem;
+            border-radius: 10px;
+            width: 100%;
+            max-width: 420px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .title {
+            font-size: 28px;
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 10px;
+            color: #fff;
+        }
+
+        .message {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #7c7c7c;
+        }
+
+        .flex {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 15px;
+        }
+
+        label {
+            position: relative;
+            width: 100%;
+        }
+
+        .input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #3f3f3f;
+            border-radius: 5px;
+            background-color: #1a1a1a;
+            color: #fff;
+            margin-bottom: 5px;
+            box-sizing: border-box;
+        }
+
+        span {
+            color: #7c7c7c;
+            font-size: 14px;
+        }
+
+        .submit {
+            width: 100%;
+            padding: 12px;
+            margin-top: 15px;
+            background-color: #4c6fff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+
+        .submit:hover {
+            background-color: #3451db;
+        }
+
+        .signin {
+            text-align: center;
+            margin-top: 15px;
+            color: #7c7c7c;
+        }
+
+        .signin a {
+            color: #4c6fff;
+            text-decoration: none;
+        }
+
+        .signin a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <form class="form" id="signupForm">
+        <p class="title">Register</p>
+        <p class="message">Signup now and get full access to our app.</p>
+        <div class="flex">
+            <label>
+                <input required placeholder="" type="text" class="input" id="firstname">
+                <span>Firstname</span>
+            </label>
+
+            <label>
+                <input required placeholder="" type="text" class="input" id="lastname">
+                <span>Lastname</span>
+            </label>
+        </div>  
+                
+        <label>
+            <input required placeholder="" type="email" class="input" id="email">
+            <span>Email</span>
+        </label> 
+            
+        <label>
+            <input required placeholder="" type="password" class="input" id="password" minlength="8" maxlength="100" pattern="^(?=.*[a-zA-Z])(?=.*\d)(?=.*[@$!%*?&#^()_+\-=\[\]{};:,.<>])[a-zA-Z\d@$!%*?&#^()_+\-=\[\]{};:,.<>]{8,100}$" title="Password must be 8-100 characters and include letters, numbers, and special characters">
+            <span>Password</span>
+        </label>
+        <label>
+            <input required placeholder="" type="password" class="input" id="confirmPassword">
+            <span>Confirm password</span>
+        </label>
+        <button class="submit">Submit</button>
+        <p class="signin">Already have an account? <a href="login.html">Signin</a></p>
+    </form>
+    <script src="signup-functionality.js"></script>
+</body>
+</html>

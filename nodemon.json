@@ -1,0 +1,23 @@
+{
+  "watch": [
+    "server.js",
+    "public/**/*",
+    "routes/**/*"
+  ],
+  "ext": "js,json,html,css",
+  "ignore": [
+    "node_modules/**/*",
+    "uploads/**/*"
+  ],
+  "verbose": true,
+  "legacyWatch": true,
+  "exec": "node --inspect server.js",
+  "env": {
+    "NODE_ENV": "development",
+    "NO_CACHE": "true"
+  },
+  "watch_options": {
+    "usePolling": true,
+    "interval": 250
+  }
+}

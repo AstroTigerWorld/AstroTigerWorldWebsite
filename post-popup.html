@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Post Creation</title>
+    <link rel="stylesheet" href="post-styles.css">
+    <style>
+        /* Add some basic styling to improve the layout */
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .popup {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #fff;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+        }
+        .popup-content {
+            max-width: 400px;
+            margin: 0 auto;
+        }
+        .close {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 24px;
+            cursor: pointer;
+        }
+        .profile-photo {
+            margin-bottom: 20px;
+        }
+        #post-form {
+            margin-top: 20px;
+        }
+        #post-content {
+            width: 100%;
+            height: 100px;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        #post-image, #post-video {
+            margin-top: 10px;
+        }
+        #forYouSection {
+            margin-top: 50px;
+        }
+        #posts-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        /* Blur effect for background */
+        .blur {
+            filter: blur(5px);
+        }
+    </style>
+</head>
+<body>
+    <div id="post-popup" class="popup">
+        <div class="popup-content">
+            <span class="close" id="close-popup">&times;</span>
+            <h2>Create a Post</h2>
+            <div class="profile-photo">
+                <img src="path/to/profile-photo.jpg" alt="Profile Photo" id="profile-photo">
+            </div>
+            <form id="post-form">
+                <textarea id="post-content" placeholder="What's on your mind?" required></textarea>
+                <input type="file" id="post-image" accept="image/*" multiple>
+                <input type="file" id="post-video" accept="video/*" multiple>
+                <button type="submit">Post</button>
+            </form>
+        </div>
+    </div>
+    <div id="forYouSection">
+        <h2>For You</h2>
+        <ul id="posts-list"></ul>
+    </div>
+    <script src="post-functionality.js"></script>
+</body>
+</html>

@@ -1,0 +1,20 @@
+{
+	"folders": [
+		{
+			"name": "Website",
+			"path": "."
+		}
+	],
+	"settings": {
+		"workbench.editor.defaultBinaryEditor": "",
+		"files.autoSave": "afterDelay",
+		"editor.occurrencesHighlight": "multiFile",
+		"editor.defaultFoldingRangeProvider": "Blackboxapp.blackbox",
+		"editor.defaultFormatter": "Blackboxapp.blackbox",
+		"notebook.defaultFormatter": "Blackboxapp.blackbox",
+		"[html]": {
+			"editor.defaultFormatter": "mohd-akram.vscode-html-format"
+		},
+		"git.ignoreLimitWarning": true
+	}
+}

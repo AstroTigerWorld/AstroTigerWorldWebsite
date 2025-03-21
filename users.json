@@ -1,0 +1,40 @@
+[
+  {
+    "id": "test-user-id",
+    "firstname": "Test",
+    "lastname": "User",
+    "username": "testuser",
+    "email": "test@example.com",
+    "password": "9bab06335eace4af543c3b45ad9a135c05838220a29a808c84c7c04f67fee88ee18e7aab5c45e753e9269a24ce82b2a4b877bb79fe2a7809bbacc7a85b3454a1",
+    "salt": "103c9539d81addf2880b75a6e6a7e6df",
+    "profilePhoto": "/placeholder.png",
+    "createdAt": "2024-01-01T00:00:00.000Z"
+  },
+  {
+    "id": "9e5ee98ecf37005abde23c3161480777",
+    "firstname": "Astro",
+    "lastname": "Tiger",
+    "username": "AstroTigerWorld",
+    "email": "gingercat1909@gmail.com",
+    "password": "b44fe2933882ae41cadae9aa92439277e0e352f0d9474274c4052243bf904d2eedeab75d9905003e355f7cab43e224dbdba4dcef5f6ab61c267b42ba1649c7b6",
+    "salt": "e5c8a68bbc03ecf45cddedf9f290c5e4",
+    "profilePhoto": "/images/avatars/avatar3.svg",
+    "createdAt": "2024-12-18T12:02:16.903Z"
+  },
+  {
+    "id": 3,
+    "firstname": "Test",
+    "lastname": "User",
+    "username": "testuser",
+    "email": "testuser@example.com",
+    "password": "$2b$10$j6BiVjIpODEv/y1rOex.B.aCmq6jhmxF6oMzvDY2g0ZE1Hh.Mycve"
+  },
+  {
+    "id": 4,
+    "firstname": "New",
+    "lastname": "User",
+    "username": "newuser",
+    "email": "newuser@example.com",
+    "password": "$2b$10$4bDhTXlhXrGOYhmdzm4ZjepGP5cDQv4XuLQFCR3TlztF.Rm5Ctf6K"
+  }
+]

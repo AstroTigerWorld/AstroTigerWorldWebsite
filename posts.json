@@ -1,0 +1,23 @@
+[
+  {
+    "id": "b32a2d90b3bc5f7723383ffaf8750c03",
+    "userName": "Test User",
+    "userId": "test-user-id",
+    "text": "Test post with multiple images",
+    "profilePhoto": "/images/avatars/avatar1.svg",
+    "media": [
+      {
+        "id": "b32a2d90b3bc5f7723383ffaf8750c04",
+        "type": "image",
+        "src": "/uploads/1734309506482.jpg"
+      },
+      {
+        "id": "b32a2d90b3bc5f7723383ffaf8750c05",
+        "type": "image",
+        "src": "/uploads/1734309506484.jpg"
+      }
+    ],
+    "timestamp": 1734666424583,
+    "hideUsername": false
+  }
+]
