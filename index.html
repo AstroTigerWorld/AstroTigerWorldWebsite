@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Post Feed</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="post-styles.css">
+    <link rel="stylesheet" href="success-animation.css">
+    <link rel="stylesheet" href="button-styles.css">
+    <link rel="stylesheet" href="create-post-styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <div class="left-section">
+                <div class="menu">
+                    <div class="item">
+                        <a href="#" class="link">
+                            <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHZpZXdCb3g9IjAgMCA0MCA0MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48Y2lyY2xlIGN4PSIyMCIgY3k9IjIwIiByPSIyMCIgZmlsbD0iIzY2N2VlYSIvPjxwYXRoIGQ9Ik0yMCAyMEMyMi43NjE0IDIwIDI1IDE3Ljc2MTQgMjUgMTVDMjUgMTIuMjM4NiAyMi43NjE0IDEwIDIwIDEwQzE3LjIzODYgMTAgMTUgMTIuMjM4NiAxNSAxNUMxNSAxNy43NjE0IDE3LjIzODYgMjAgMjAgMjBaIiBmaWxsPSJ3aGl0ZSIvPjxwYXRoIGQ9Ik0yOCAzMEMyOCAyNi42ODYzIDI0LjQxODMgMjQgMjAgMjRDMTUuNTgxNyAyNCAxMiAyNi42ODYzIDEyIDMwIiBzdHJva2U9IndoaXRlIiBzdHJva2Utd2lkdGg9IjIiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPjwvc3ZnPg==" alt="Profile Picture" class="profile-picture">
+                            <span class="username">Guest User</span>
+                            <svg viewBox="0 0 360 360" xml:space="preserve" class="dropdown-arrow">
+                                <g id="SVGRepo_iconCarrier">
+                                    <path
+                                        id="XMLID_225_"
+                                        d="M325.607,79.393c-5.857-5.857-15.355-5.858-21.213,0.001l-139.39,139.393L25.607,79.393 c-5.857-5.857-15.355-5.858-21.213,0.001c-5.858,5.858-5.858,15.355,0,21.213l150.004,150c2.813,2.813,6.628,4.393,10.606,4.393 s7.794-1.581,10.606-4.394l149.996-150C331.465,94.749,331.465,85.251,325.607,79.393z"
+                                    ></path>
+                                </g>
+                            </svg>
+                        </a>
+                        <div class="submenu">
+                            <div class="submenu-item">
+                                <a href="edit-account.html" class="submenu-link">
+                                    <svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" data-name="Layer 2">
+                                        <path fill="#FFFFFF" d="m1.5 13v1a.5.5 0 0 0 .3379.4731 18.9718 18.9718 0 0 0 6.1621 1.0269 18.9629 18.9629 0 0 0 6.1621-1.0269.5.5 0 0 0 .3379-.4731v-1a6.5083 6.5083 0 0 0 -4.461-6.1676 3.5 3.5 0 1 0 -4.078 0 6.5083 6.5083 0 0 0 -4.461 6.1676zm4-9a2.5 2.5 0 1 1 2.5 2.5 2.5026 2.5026 0 0 1 -2.5-2.5zm2.5 3.5a5.5066 5.5066 0 0 1 5.5 5.5v.6392a18.08 18.08 0 0 1 -11 0v-.6392a5.5066 5.5066 0 0 1 5.5-5.5z"/>
+                                    </svg>
+                                    Edit Profile
+                                </a>
+                            </div>
+                            <div class="submenu-item">
+                                <a href="bookmarks.html" class="submenu-link">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2">
+                                        <path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/>
+                                    </svg>
+                                    Saved Posts
+                                </a>
+                            </div>
+                            <div class="submenu-item">
+                                <a href="login.html" class="submenu-link">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2">
+                                        <path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4M10 17l5-5-5-5M15 12H3"/>
+                                    </svg>
+                                    Sign In
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="auth-buttons">
+                <a href="signup.html" class="signup-btn" id="signupBtn">Sign Up</a>
+            </div>
+        </div>
+        <form id="loginForm">
+            <input type="text" id="email" placeholder="Email or Username" required>
+            <input type="password" id="password" placeholder="Password" required>
+            <button type="submit">Login</button>
+        </form>
+
+        <!-- Search Container -->
+        <div class="search-container">
+            <input type="text" class="search-bar" id="searchInput" placeholder="Search posts..." disabled>
+            <button class="filter-button" id="filterIcon" disabled>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M22 3H2l8 9.46V19l4 2v-8.54L22 3z"/>
+                </svg>
+            </button>
+            <a href="#" class="create-post-btn" id="createPostBtn">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="12" y1="5" x2="12" y2="19"></line>
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                </svg>
+                Create Post
+            </a>
+        </div>
+
+        <!-- Posts Grid -->
+        <h2>For You</h2>
+        <div id="posts-list">
+            <p>Loading posts...</p>
+        </div>
+    </div>
+
+    <script type="module" crossorigin="anonymous">
+        import { initializeDropdown } from './dropdown-functionality.js';
+        import { saveBookmark, removeBookmark, isBookmarked } from './bookmarks-functionality.js';
+        import { fetchAndDisplayPosts } from './post-functionality.js';
+
+        // Make bookmark functions available globally
+        window.saveBookmark = saveBookmark;
+        window.removeBookmark = removeBookmark;
+        window.isBookmarked = isBookmarked;
+
+        document.addEventListener('DOMContentLoaded', () => {
+            // Initialize dropdown functionality
+            initializeDropdown();
+
+            const createPostBtn = document.getElementById('createPostBtn');
+            const signUpBtn = document.getElementById('signupBtn');
+
+            // Add click handler for create post button
+            createPostBtn.addEventListener('click', function(e) {
+                e.preventDefault();
+                // Check if user is logged in by checking localStorage and cookies
+                const storedUser = localStorage.getItem('currentUser');
+                const cookies = document.cookie.split(';').reduce((acc, cookie) => {
+                    const [key, value] = cookie.trim().split('=');
+                    acc[key] = value;
+                    return acc;
+                }, {});
+
+                if (storedUser || cookies.token) {
+                    window.location.href = 'create-post.html';
+                } else {
+                    window.location.href = 'login.html';
+                    return false; // Prevent default and stop propagation
+                }
+            });
+
+            // Check for stored user data
+            const storedUser = localStorage.getItem('currentUser');
+            const cookies = document.cookie.split(';').reduce((acc, cookie) => {
+                const [key, value] = cookie.trim().split('=');
+                acc[key] = value;
+                return acc;
+            }, {});
+
+            if (storedUser || cookies.token) {
+                console.log('Found stored user:', storedUser); // Log stored user
+                console.log('Cookies:', cookies); // Log cookies
+                const userData = JSON.parse(storedUser);
+                console.log('Parsed user data:', userData);
+                
+                const usernameElement = document.querySelector('.username');
+                const profilePicture = document.querySelector('.profile-picture');
+                console.log('Found elements:', { usernameElement, profilePicture });
+                
+                if (usernameElement) {
+                    usernameElement.textContent = userData.username;
+                }
+                
+                if (profilePicture && userData.profilePhoto) {
+                    console.log('Setting profile picture from:', userData.profilePhoto);
+                    const photoPath = userData.profilePhoto.startsWith('/') 
+                        ? userData.profilePhoto 
+                        : '/' + userData.profilePhoto;
+                    console.log('Final photo path:', photoPath);
+                    // Force image reload by appending timestamp
+                    profilePicture.src = photoPath + '?t=' + new Date().getTime();
+                }
+
+                // Hide sign up button and show create post button when logged in
+                if (signUpBtn) {
+                    signUpBtn.style.display = 'none';
+                }
+                if (createPostBtn) {
+                    createPostBtn.style.display = 'flex';
+                }
+
+                // Enable search functionality when logged in
+                const searchInput = document.getElementById('searchInput');
+                const filterIcon = document.getElementById('filterIcon');
+                if (searchInput) {
+                    searchInput.disabled = false;
+                }
+                if (filterIcon) {
+                    filterIcon.disabled = false;
+                }
+
+                // Update menu items for logged-in user
+                const submenu = document.querySelector('.submenu');
+                if (submenu) {
+                    const signInItem = submenu.querySelector('a[href="login.html"]');
+                    if (signInItem) {
+                        const logoutItem = signInItem.parentElement;
+                        logoutItem.innerHTML = `
+                            <a href="#" class="submenu-link logout-btn" id="logoutBtn">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="#ff4d4d" stroke-width="2">
+                                    <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4M16 17l5-5-5-5M21 12H9"/>
+                                </svg>
+                                Logout
+                            </a>
+                        `;
+
+                        // Add logout functionality
+                        const logoutBtn = document.getElementById('logoutBtn');
+                        if (logoutBtn) {
+                            logoutBtn.addEventListener('click', function(e) {
+                                e.preventDefault();
+                                // Clear both localStorage and cookie
+                                localStorage.removeItem('currentUser');
+                                
+                                // Call logout API endpoint
+                                fetch('/api/logout', {
+                                    method: 'POST',
+                                    credentials: 'include'
+                                }).then(() => {
+                                    window.location.href = 'login.html';
+                                });
+                            });
+                        }
+                    }
+                }
+
+                // Debugging: Check stored user data and cookies
+                console.log('Stored user data:', storedUser);
+                console.log('Cookies:', cookies);
+                const postsList = document.getElementById('posts-list');
+                if (postsList) {
+                    postsList.innerHTML = '<p>Loading posts...</p>';
+                    fetchAndDisplayPosts(); // Call the function from post-functionality.js
+                }
+            } else {
+                // Hide create post button when not logged in
+                if (createPostBtn) {
+                    createPostBtn.style.display = 'none';
+                }
+                // Show sign in message when not logged in
+                const postsList = document.getElementById('posts-list');
+                if (postsList) {
+                    postsList.innerHTML = '<p>Please sign in to view posts.</p>';
+                }
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bookmarks</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="button-styles.css">
+    <link rel="stylesheet" href="post-styles.css">
+    <link rel="stylesheet" href="bookmark-styles.css">
+    <link rel="stylesheet" href="profile-picture-styles.css">
+    <link rel="stylesheet" href="header-styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <div class="left-section">
+                <button onclick="window.location.href='index.html'" class="home-btn">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                        <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                    </svg>
+                    Home
+                </button>
+            </div>
+            <h1>Bookmarks</h1>
+        </div>
+
+        <!-- Search and Sort Container -->
+        <div class="search-container">
+            <input type="text" id="searchInput" placeholder="Search bookmarks..." class="search-bar">
+            <div class="sort-container">
+                <select id="sortSelect" class="filter-button">
+                    <option value="time-desc">Newest First</option>
+                    <option value="time-asc">Oldest First</option>
+                    <option value="alpha-asc">A-Z</option>
+                    <option value="alpha-desc">Z-A</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- Bookmarks Grid -->
+        <div id="bookmarksGrid" class="bookmarks-grid">
+            <!-- Bookmarks will be dynamically inserted here -->
+        </div>
+    </div>
+
+    <script type="module">
+        import { initializeDropdown } from './dropdown-functionality.js';
+        import { getSavedBookmarks, displayBookmarks, sortBookmarks, filterBookmarks } from './bookmarks-functionality.js';
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const searchInput = document.getElementById('searchInput');
+            const sortSelect = document.getElementById('sortSelect');
+
+            if (searchInput) {
+                searchInput.addEventListener('input', (e) => {
+                    const bookmarks = getSavedBookmarks();
+                    const sortType = sortSelect ? sortSelect.value : 'time-desc';
+                    const filtered = filterBookmarks(bookmarks, e.target.value);
+                    const sorted = sortBookmarks(filtered, sortType);
+                    displayBookmarks(sorted);
+                });
+            }
+
+            if (sortSelect) {
+                sortSelect.addEventListener('change', (e) => {
+                    const bookmarks = getSavedBookmarks();
+                    const searchTerm = searchInput ? searchInput.value : '';
+                    const filtered = filterBookmarks(bookmarks, searchTerm);
+                    const sorted = sortBookmarks(filtered, e.target.value);
+                    displayBookmarks(sorted);
+                });
+            }
+
+            // Initial load
+            const bookmarks = getSavedBookmarks();
+            const sorted = sortBookmarks(bookmarks, 'time-desc');
+            displayBookmarks(sorted);
+        });
+    </script>
+</body>
+</html>

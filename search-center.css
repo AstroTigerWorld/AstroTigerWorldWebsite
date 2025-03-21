@@ -1,0 +1,57 @@
+/* Minimal styles for centered search */
+.header {
+    position: relative;
+    padding: 20px;
+    margin-bottom: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+}
+
+.header-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    min-height: 80px;
+}
+
+.left-section {
+    position: absolute;
+    left: 20px;
+}
+
+.right-section {
+    position: absolute;
+    right: 20px;
+}
+
+.center-section {
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+/* Hide original title */
+.header h1 {
+    display: none;
+}
+
+/* Ensure search stays on top */
+.search-container {
+    position: relative;
+    z-index: 10;
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+    .header-content {
+        flex-direction: column;
+        padding-top: 60px;
+    }
+
+    .left-section,
+    .right-section {
+        position: static;
+        margin: 10px 0;
+    }
+}

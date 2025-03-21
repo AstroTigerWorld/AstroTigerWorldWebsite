@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Register</title>
+    <link rel="stylesheet" href="success-animation.css">
     <style>
         body {
             margin: 0;
@@ -117,12 +118,17 @@
         </div>  
                 
         <label>
+            <input required placeholder="" type="text" class="input" id="username">
+            <span>Username</span>
+        </label>
+
+        <label>
             <input required placeholder="" type="email" class="input" id="email">
             <span>Email</span>
         </label> 
             
         <label>
-            <input required placeholder="" type="password" class="input" id="password" minlength="8" maxlength="100" pattern="^(?=.*[a-zA-Z])(?=.*\d)(?=.*[@$!%*?&#^()_+\-=\[\]{};:,.<>])[a-zA-Z\d@$!%*?&#^()_+\-=\[\]{};:,.<>]{8,100}$" title="Password must be 8-100 characters and include letters, numbers, and special characters">
+            <input required placeholder="" type="password" class="input" id="password" minlength="8" maxlength="100" pattern="^(?=.*[a-zA-Z])(?=.*\d)(?=.*[^a-zA-Z0-9])[!-~]{8,100}$" title="Password must be 8-100 characters and include at least one letter, one number, and one special character">
             <span>Password</span>
         </label>
         <label>
@@ -132,6 +138,14 @@
         <button class="submit">Submit</button>
         <p class="signin">Already have an account? <a href="login.html">Signin</a></p>
     </form>
+    <div class="overlay" id="overlay"></div>
+    <div class="success-animation" id="successAnimation">
+        <svg class="checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52">
+            <circle class="checkmark__circle" cx="26" cy="26" r="25" fill="none"/>
+            <path class="checkmark__check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8"/>
+        </svg>
+        <div class="success-message">Successfully Registered!</div>
+    </div>
     <script src="signup-functionality.js"></script>
 </body>
 </html>

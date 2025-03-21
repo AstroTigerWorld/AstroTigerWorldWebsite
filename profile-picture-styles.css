@@ -1,0 +1,151 @@
+.profile-picture-popup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #1a1a1a;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    max-width: 500px;
+    width: 90%;
+    color: white;
+}
+
+.profile-picture-popup.active {
+    display: block;
+}
+
+.popup-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 999;
+}
+
+.popup-overlay.active {
+    display: block;
+}
+
+.predefined-images {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    margin: 20px 0;
+}
+
+.predefined-image {
+    width: 100%;
+    aspect-ratio: 1;
+    object-fit: cover;
+    border-radius: 50%;
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: all 0.3s ease;
+}
+
+.predefined-image:hover {
+    border-color: #4a90e2;
+    transform: scale(1.05);
+}
+
+.predefined-image.selected {
+    border-color: #4CAF50;
+}
+
+.upload-section {
+    margin: 20px 0;
+    text-align: center;
+}
+
+.popup-buttons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.popup-button {
+    padding: 8px 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    border: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.close-popup {
+    background-color: #666;
+    color: white;
+}
+
+.close-popup:hover {
+    background-color: #888;
+}
+
+.save-picture {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.save-picture:hover {
+    background-color: #45a049;
+}
+
+.popup-title {
+    margin-top: 0;
+    margin-bottom: 20px;
+    color: white;
+    text-align: center;
+}
+
+#customPictureInput {
+    display: none;
+}
+
+.upload-button {
+    background-color: #4a90e2;
+    color: white;
+    padding: 8px 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    border: none;
+    margin-bottom: 10px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.upload-button:hover {
+    background-color: #357abd;
+}
+
+.or-divider {
+    text-align: center;
+    margin: 20px 0;
+    position: relative;
+    color: #888;
+}
+
+.or-divider::before,
+.or-divider::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    width: 45%;
+    height: 1px;
+    background-color: #444;
+}
+
+.or-divider::before {
+    left: 0;
+}
+
+.or-divider::after {
+    right: 0;
+}
